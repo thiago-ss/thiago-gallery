@@ -12,15 +12,14 @@ export default async function HomePage() {
       <h1 className="text-center text-3xl font-bold">Image Gallery</h1>
       <div className="flex items-center justify-center gap-10 flex-wrap">
         {images.map((image) => (
-          <div key={image.id} className="flex flex-col items-center gap-4">
+          <div key={image.url} className="flex flex-col items-center gap-1">
             <h2>{image.name}</h2>
-            <p>{image.createdAt.toLocaleDateString()}</p>
             <Image
               width={300}
               height={300}
               key={image.id}
               src={image.url}
-              alt={`Image ${image.name}`}
+              alt={image.name}
               className="h-52 rounded-md object-cover"
             />
           </div>
